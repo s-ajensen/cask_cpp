@@ -1,0 +1,20 @@
+# ninja log v6
+630	736	1754229982186907188	cask_tests	bb135fa2cefe9eef
+1	2976	1754058224199433309	CMakeFiles/cask_tests.dir/spec/test.cpp.o	f269e68badda248d
+27	836	1754073185944623989	CMakeFiles/cask_tests.dir/spec/main_spec.cpp.o	31662e2582564eab
+536	627	1754024943610168575	cask_cpp	d6e61df5f560f5c7
+5	536	1754024943079232370	CMakeFiles/cask_cpp.dir/main.cpp.o	9baf8a2a16668560
+2	62	1754230664657132005	build.ninja	a678c957a659f395
+6	512	1754081255220978498	CMakeFiles/cask.dir/src/main.cpp.o	fbd64caadbdf5d1
+513	606	1754081255727453837	cask	8edaa909ef646951
+9	630	1754229981565674996	CMakeFiles/cask_tests.dir/spec/core_spec.cpp.o	35b3a16f7c542103
+6	612	1754230696948025009	CMakeFiles/cask_tests.dir/spec/main_spec.cpp.o	31662e2582564eab
+6	617	1754230696947715639	CMakeFiles/cask_tests.dir/spec/core_spec.cpp.o	35b3a16f7c542103
+617	723	1754230697558745063	cask_tests	bb135fa2cefe9eef
+6	476	1754230705895371786	CMakeFiles/cask_tests.dir/spec/core_spec.cpp.o	35b3a16f7c542103
+476	515	1754230706365275717	cask_tests	bb135fa2cefe9eef
+7	476	1754230721561867510	CMakeFiles/cask_tests.dir/spec/core_spec.cpp.o	35b3a16f7c542103
+476	522	1754230722031436571	cask_tests	bb135fa2cefe9eef
+8	740	1754232769601898858	CMakeFiles/cask_tests.dir/spec/core_spec.cpp.o	35b3a16f7c542103
+8	583	1754232857639843512	CMakeFiles/cask_tests.dir/spec/main_spec.cpp.o	31662e2582564eab
+583	708	1754232858215400915	cask_tests	bb135fa2cefe9eef
