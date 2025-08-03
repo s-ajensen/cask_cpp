@@ -1,3 +1,6 @@
+cask
+cask_tests
+
 lib/
 spec/lib/
 build/*
