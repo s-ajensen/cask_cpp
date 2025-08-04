@@ -6,6 +6,7 @@ spec/lib/
 build/*
 
 .idea
+.vscode
 
 *.d
 

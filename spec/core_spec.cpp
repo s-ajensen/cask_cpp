@@ -29,15 +29,16 @@ describe("Cask Core") {
 
   context("game loop") {
 
-    it("steps once without render")  {
-      auto clock = FakeClock<2>({1, 2});
+    it("steps once")  {
+      auto clock = FakeClock<5>({1, 2, 3, 4, 5});
       auto engine = HaltEngine(1);
       game_loop(clock, engine, 1, 0);
       should_eq(0, engine.updates.at(0));
+      should_eq(1, engine.updates.size());
     }
 
     it("steps twice") {
-      auto clock = FakeClock<2>({1, 2});
+      auto clock = FakeClock<5>({1, 2, 3, 4, 5});
       auto engine = HaltEngine(2);
       game_loop(clock, engine, 1, 0);
       should_eq(1, engine.updates.at(1));
@@ -49,26 +50,23 @@ describe("Cask Core") {
       auto engine = HaltEngine(2);
       game_loop(clock, engine, 1, 0);
       should_eq(1, engine.renders.at(0));
-      should_eq(2, engine.renders.at(1));
-      should_eq(2, engine.renders.size());
+      should_eq(1, engine.renders.size());
     }
 
     it("logic and rendering perfectly in sync") {
-      auto clock = FakeClock<2>({1, 2});
+      auto clock = FakeClock<7>({1, 2, 3, 4, 5, 6, 7});
       auto engine = HaltEngine(5);
       game_loop(clock, engine, 1, 0);
       should_eq(5, engine.updates.size());
       should_eq(5, engine.renders.size());
     }
 
-    /*
     it("logic twice as fast as rendering") {
-      auto clock = FakeClock<2>({1, 2});
+      auto clock = FakeClock<7>({2, 4, 6, 8, 10, 12, 14});
       auto engine = HaltEngine(6);
       game_loop(clock, engine, 1, 0);
       should_eq(6, engine.updates.size());
       should_eq(3, engine.renders.size());
     }
-      */
   }
 }
