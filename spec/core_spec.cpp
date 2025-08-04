@@ -3,7 +3,7 @@
 #include "core.hpp"
 #include "time_helper.hpp"
 
-class HaltEngine : public Steppable<int>, public Renderable<int> {
+class HaltEngine : public Steppable<int>, public Renderable<int>, public Haltable<int> {
 public:
   const int cycles;
   mutable std::vector<int> updates;
@@ -11,13 +11,13 @@ public:
 
   explicit HaltEngine(int cycles) : cycles(cycles) { }
 
-  State<int> next_state(const int& state) const override {
-    if (state >= this->cycles) {
-      return Halt();
-    }
-
+  int next_state(const int& state) const override {
     updates.push_back(state);
     return state + 1;
+  }
+
+  bool is_halted(const int& state) const override {
+    return state >= this->cycles;
   }
 
   void render(const int& state) const override {
@@ -47,9 +47,9 @@ describe("Cask Core") {
 
     it("renders once") {
       auto clock = FakeClock<2>({1, 2});
-      auto engine = HaltEngine(2);
+      auto engine = HaltEngine(1);
       game_loop(clock, engine, 1, 0);
-      should_eq(1, engine.renders.at(0));
+      should_eq(0, engine.renders.at(0));
       should_eq(1, engine.renders.size());
     }
 
