@@ -62,7 +62,7 @@ add_executable(cask_tests
 )
 
 add_custom_target(test
-        COMMAND cask_tests
+        COMMAND cask_tests -s --reporter compact
         DEPENDS cask_tests
         COMMENT "Running tests..."
 )
